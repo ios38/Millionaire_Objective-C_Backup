@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "NetworkService.h"
+#import "QuestionAndAnswers.h"
 
 @interface ViewController ()
 
@@ -16,8 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self getQuestion];
+
 }
 
+#pragma mark - API
+
+- (void) getQuestion {
+    [[NetworkService shared] getQuestionWithType:1
+      onSuccess:^(QuestionAndAnswers *questionAndAnswers) {
+
+        NSLog(@"question: %@", questionAndAnswers.question);
+        for (NSString *answer in questionAndAnswers.answers) {
+            NSLog(@"answer: %@", answer);
+        }
+    }
+      onFailure:^(NSError *error) {
+        NSLog(@"error: %@", [error localizedDescription]);
+    }];
+}
 
 @end

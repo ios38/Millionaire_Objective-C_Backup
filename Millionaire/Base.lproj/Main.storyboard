@@ -124,6 +124,7 @@
                     <navigationItem key="navigationItem" id="Xeg-XG-3BB"/>
                     <connections>
                         <outlet property="QuestionLabel" destination="5Ya-v0-apK" id="OLa-Nb-NVI"/>
+                        <outlet property="fiftyFiftyButton" destination="O8V-bc-Vjr" id="t3I-nr-zey"/>
                         <outlet property="questionDifficulty" destination="Faj-TW-Ng7" id="zuo-Xz-zXX"/>
                         <outlet property="tableView" destination="f0j-ut-lAw" id="7ci-3l-9ST"/>
                         <outlet property="trueAnswersCountLabel" destination="1o0-5z-fZD" id="ZoK-cd-gVM"/>

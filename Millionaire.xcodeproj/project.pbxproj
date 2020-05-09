@@ -31,6 +31,10 @@
 		506ECA5B24656EF20005469A /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA4A24656EF20005469A /* AFSecurityPolicy.m */; };
 		506ECA6024656F130005469A /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA5C24656F130005469A /* NetworkService.m */; };
 		506ECA6124656F130005469A /* QuestionAndAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA5E24656F130005469A /* QuestionAndAnswers.m */; };
+		506ECA64246581C60005469A /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA63246581C60005469A /* MainMenuController.m */; };
+		506ECA68246585C80005469A /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA67246585C80005469A /* GameController.m */; };
+		506ECA6A24658DFF0005469A /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506ECA6924658DFE0005469A /* AnswerCell.xib */; };
+		506ECA6D24658E3F0005469A /* AnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA6C24658E3F0005469A /* AnswerCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,13 @@
 		506ECA5D24656F130005469A /* QuestionAndAnswers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionAndAnswers.h; sourceTree = "<group>"; };
 		506ECA5E24656F130005469A /* QuestionAndAnswers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionAndAnswers.m; sourceTree = "<group>"; };
 		506ECA5F24656F130005469A /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		506ECA62246581C60005469A /* MainMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuController.h; sourceTree = "<group>"; };
+		506ECA63246581C60005469A /* MainMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuController.m; sourceTree = "<group>"; };
+		506ECA66246585C80005469A /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		506ECA67246585C80005469A /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		506ECA6924658DFE0005469A /* AnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
+		506ECA6B24658E3F0005469A /* AnswerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerCell.h; sourceTree = "<group>"; };
+		506ECA6C24658E3F0005469A /* AnswerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,22 +126,28 @@
 		506ECA0F24656E5D0005469A /* Millionaire */ = {
 			isa = PBXGroup;
 			children = (
-				506ECA2924656EF10005469A /* Libraries */,
+				506ECA1924656E5D0005469A /* Main.storyboard */,
+				506ECA62246581C60005469A /* MainMenuController.h */,
+				506ECA63246581C60005469A /* MainMenuController.m */,
+				506ECA66246585C80005469A /* GameController.h */,
+				506ECA67246585C80005469A /* GameController.m */,
+				506ECA5F24656F130005469A /* NetworkService.h */,
+				506ECA5C24656F130005469A /* NetworkService.m */,
+				506ECA6B24658E3F0005469A /* AnswerCell.h */,
+				506ECA6C24658E3F0005469A /* AnswerCell.m */,
+				506ECA6924658DFE0005469A /* AnswerCell.xib */,
+				506ECA65246582210005469A /* Models */,
 				506ECA1024656E5D0005469A /* AppDelegate.h */,
 				506ECA1124656E5D0005469A /* AppDelegate.m */,
 				506ECA1324656E5D0005469A /* SceneDelegate.h */,
 				506ECA1424656E5D0005469A /* SceneDelegate.m */,
 				506ECA1624656E5D0005469A /* ViewController.h */,
 				506ECA1724656E5D0005469A /* ViewController.m */,
-				506ECA1924656E5D0005469A /* Main.storyboard */,
 				506ECA1C24656E5F0005469A /* Assets.xcassets */,
 				506ECA1E24656E5F0005469A /* LaunchScreen.storyboard */,
 				506ECA2124656E5F0005469A /* Info.plist */,
 				506ECA2224656E5F0005469A /* main.m */,
-				506ECA5F24656F130005469A /* NetworkService.h */,
-				506ECA5C24656F130005469A /* NetworkService.m */,
-				506ECA5D24656F130005469A /* QuestionAndAnswers.h */,
-				506ECA5E24656F130005469A /* QuestionAndAnswers.m */,
+				506ECA2924656EF10005469A /* Libraries */,
 			);
 			path = Millionaire;
 			sourceTree = "<group>";
@@ -189,6 +206,15 @@
 				506ECA4C24656EF20005469A /* AFHTTPSessionManager.h */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		506ECA65246582210005469A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				506ECA5D24656F130005469A /* QuestionAndAnswers.h */,
+				506ECA5E24656F130005469A /* QuestionAndAnswers.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +277,7 @@
 				506ECA2024656E5F0005469A /* LaunchScreen.storyboard in Resources */,
 				506ECA1D24656E5F0005469A /* Assets.xcassets in Resources */,
 				506ECA1B24656E5D0005469A /* Main.storyboard in Resources */,
+				506ECA6A24658DFF0005469A /* AnswerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,14 +299,17 @@
 				506ECA4E24656EF20005469A /* UIRefreshControl+AFNetworking.m in Sources */,
 				506ECA2324656E5F0005469A /* main.m in Sources */,
 				506ECA5B24656EF20005469A /* AFSecurityPolicy.m in Sources */,
+				506ECA64246581C60005469A /* MainMenuController.m in Sources */,
 				506ECA1524656E5D0005469A /* SceneDelegate.m in Sources */,
 				506ECA5824656EF20005469A /* AFURLSessionManager.m in Sources */,
 				506ECA5A24656EF20005469A /* AFNetworkReachabilityManager.m in Sources */,
+				506ECA6D24658E3F0005469A /* AnswerCell.m in Sources */,
 				506ECA5224656EF20005469A /* UIButton+AFNetworking.m in Sources */,
 				506ECA4F24656EF20005469A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				506ECA5924656EF20005469A /* AFURLRequestSerialization.m in Sources */,
 				506ECA5124656EF20005469A /* UIImageView+AFNetworking.m in Sources */,
 				506ECA5724656EF20005469A /* AFHTTPSessionManager.m in Sources */,
+				506ECA68246585C80005469A /* GameController.m in Sources */,
 				506ECA5624656EF20005469A /* AFURLResponseSerialization.m in Sources */,
 				506ECA4D24656EF20005469A /* UIProgressView+AFNetworking.m in Sources */,
 			);

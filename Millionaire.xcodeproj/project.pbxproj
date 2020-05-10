@@ -38,6 +38,7 @@
 		506ECA732466D7290005469A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA722466D7290005469A /* Game.m */; };
 		506ECA762466D8540005469A /* GameSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA752466D8540005469A /* GameSession.m */; };
 		506ECA792466DFC20005469A /* ResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA782466DFC20005469A /* ResultsController.m */; };
+		506ECA7C2467B6D80005469A /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA7B2467B6D80005469A /* GameResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,8 @@
 		506ECA752466D8540005469A /* GameSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameSession.m; sourceTree = "<group>"; };
 		506ECA772466DFC20005469A /* ResultsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsController.h; sourceTree = "<group>"; };
 		506ECA782466DFC20005469A /* ResultsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultsController.m; sourceTree = "<group>"; };
+		506ECA7A2467B6D80005469A /* GameResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameResult.h; sourceTree = "<group>"; };
+		506ECA7B2467B6D80005469A /* GameResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +225,14 @@
 		506ECA65246582210005469A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				506ECA5D24656F130005469A /* QuestionAndAnswers.h */,
-				506ECA5E24656F130005469A /* QuestionAndAnswers.m */,
-				506ECA742466D8540005469A /* GameSession.h */,
-				506ECA752466D8540005469A /* GameSession.m */,
 				506ECA712466D7290005469A /* Game.h */,
 				506ECA722466D7290005469A /* Game.m */,
+				506ECA7A2467B6D80005469A /* GameResult.h */,
+				506ECA7B2467B6D80005469A /* GameResult.m */,
+				506ECA742466D8540005469A /* GameSession.h */,
+				506ECA752466D8540005469A /* GameSession.m */,
+				506ECA5D24656F130005469A /* QuestionAndAnswers.h */,
+				506ECA5E24656F130005469A /* QuestionAndAnswers.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				506ECA1524656E5D0005469A /* SceneDelegate.m in Sources */,
 				506ECA792466DFC20005469A /* ResultsController.m in Sources */,
 				506ECA5824656EF20005469A /* AFURLSessionManager.m in Sources */,
+				506ECA7C2467B6D80005469A /* GameResult.m in Sources */,
 				506ECA5A24656EF20005469A /* AFNetworkReachabilityManager.m in Sources */,
 				506ECA732466D7290005469A /* Game.m in Sources */,
 				506ECA6D24658E3F0005469A /* AnswerCell.m in Sources */,

@@ -7,12 +7,14 @@
 //
 
 #import "ResultsController.h"
+#import "Game.h"
+#import "GameResult.h"
 
 @interface ResultsController ()
 
+@property (strong,nonatomic)NSDateFormatter *dateFormatter;
+
 - (IBAction)backButton:(id)sender;
-
-
 
 @end
 
@@ -20,12 +22,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.dateFormatter.dateFormat = @"dd.mm.yy hh-mm";
 }
 
 - (IBAction)backButton:(id)sender {
 
     [self dismissViewControllerAnimated:NO completion:nil];
 }
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"Game.shared.gameResults count = %lu", (unsigned long)[Game.shared.gameResults count]);
+    return [Game.shared.gameResults count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"resultCell"];
+    GameResult *gameResult = [Game.shared.gameResults objectAtIndex:indexPath.row];
+    NSLog(@"date = %@, result = %@", gameResult.date, gameResult.result);
+    cell.textLabel.text = [self.dateFormatter stringFromDate:gameResult.date];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",gameResult.result];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    return cell;
+}
+
 
 @end

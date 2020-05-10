@@ -7,6 +7,13 @@
 //
 
 #import "Game.h"
+#import "GameResult.h"
+
+//@interface Game()
+//
+//@property (strong,nonatomic) NSMutableArray *gameResults;
+//
+//@end
 
 @implementation Game
 
@@ -24,8 +31,19 @@
     return game;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.gameResults = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (void)endGameWithResult:(NSUInteger)result {
     NSLog(@"Game: endGameWithResult: %lu",(unsigned long)result);
+    NSDate *date = [NSDate date];
+    GameResult *gameResult = [[GameResult alloc] initWithDate:date andResult:result];
+    [self.gameResults addObject:gameResult];
     self.gameSession = nil;
 }
 

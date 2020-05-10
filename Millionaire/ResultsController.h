@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ResultsController : UIViewController
+@interface ResultsController : UIViewController <UITableViewDataSource>
 
-
+@property (weak, nonatomic) IBOutlet UITableView* tableView;
 
 @end
 

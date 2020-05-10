@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Game : NSObject
 
 @property (strong,nonatomic) GameSession * _Nullable gameSession;
+@property (strong,nonatomic) NSMutableArray *gameResults;
 
 + (Game *) shared;
 

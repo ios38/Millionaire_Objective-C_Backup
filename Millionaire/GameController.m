@@ -9,6 +9,7 @@
 #import "GameController.h"
 #import "NetworkService.h"
 #import "QuestionAndAnswers.h"
+#import "Game.h"
 
 @implementation UIColor (Layout)
 
@@ -26,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *trueAnswersCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *fiftyFiftyButton;
 
+@property (weak, nonatomic) id <GameDelegate> gameDelegate;
+
 @property (assign,nonatomic)int questionsType;
 @property (strong,nonatomic)QuestionAndAnswers *questionAndAnswers;
 @property (strong,nonatomic)NSString *trueAnswer;
@@ -42,8 +45,8 @@
     self.QuestionLabel.text = self.questionAndAnswers.question;
     self.questionDifficulty.text = @"Уровень сложности: 1";
     self.trueAnswersCountLabel.text = @"Правильных ответов: 0";
-    
     [self.fiftyFiftyButton addTarget:self action:@selector(fiftyFiftyAnswers) forControlEvents:UIControlEventTouchUpInside];
+    self.gameDelegate = Game.shared.gameSession;
     [self getQuestion];
 }
 
@@ -104,8 +107,12 @@
         //NSLog(@"Неправильный ответ!");
         cell.backgroundColor = [UIColor redColor];
         dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            cell.backgroundColor = [UIColor blackColor];
-            tableView.allowsSelection = YES;
+            [self.gameDelegate didEndGameWithResult:self.trueAnswersCount];
+            //cell.backgroundColor = [UIColor blackColor];
+            //tableView.allowsSelection = YES;
+            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                [self dismissViewControllerAnimated:NO completion:nil];
+            });
         });
     }
 }
@@ -141,5 +148,3 @@
 }
 
 @end
-
-

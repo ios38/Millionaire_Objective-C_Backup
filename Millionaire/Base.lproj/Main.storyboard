@@ -24,9 +24,6 @@
                                         <state key="normal" title="Новая игра">
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="s4X-NB-hmJ" kind="show" id="eUF-7k-FT1"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4za-a7-qOS">
                                         <rect key="frame" x="0.0" y="78" width="124" height="41"/>
@@ -45,6 +42,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="resultsButton" destination="4za-a7-qOS" id="ANE-EL-7ZQ"/>
+                        <outlet property="startButton" destination="Acd-Ri-lta" id="hly-jP-bMh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +54,7 @@
         <!--Game Controller-->
         <scene sceneID="Xrf-vG-XgW">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="s4X-NB-hmJ" customClass="GameController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameController" modalPresentationStyle="fullScreen" id="s4X-NB-hmJ" customClass="GameController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dEr-Fg-EqM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +134,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d01-83-hzT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="139"/>
+        </scene>
+        <!--Results Controller-->
+        <scene sceneID="EYs-l5-XvO">
+            <objects>
+                <viewController storyboardIdentifier="resultsController" id="EDV-hy-fzp" customClass="ResultsController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5MR-rS-zSa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результаты" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wb-HL-7ha">
+                                <rect key="frame" x="30" y="74" width="354" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-Ib-1cf">
+                                <rect key="frame" x="30" y="791" width="354" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Назад">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="EDV-hy-fzp" eventType="touchUpInside" id="zEU-O1-67p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FoO-Ig-SL9" firstAttribute="trailing" secondItem="8wb-HL-7ha" secondAttribute="trailing" constant="30" id="08t-Mb-8JJ"/>
+                            <constraint firstItem="8wb-HL-7ha" firstAttribute="top" secondItem="FoO-Ig-SL9" secondAttribute="top" constant="30" id="0AM-ho-v01"/>
+                            <constraint firstItem="FoO-Ig-SL9" firstAttribute="bottom" secondItem="YUA-Ib-1cf" secondAttribute="bottom" constant="30" id="Hye-Mi-p1b"/>
+                            <constraint firstItem="YUA-Ib-1cf" firstAttribute="leading" secondItem="FoO-Ig-SL9" secondAttribute="leading" constant="30" id="UtA-8d-PfI"/>
+                            <constraint firstItem="8wb-HL-7ha" firstAttribute="leading" secondItem="FoO-Ig-SL9" secondAttribute="leading" constant="30" id="bBr-1O-B7G"/>
+                            <constraint firstItem="FoO-Ig-SL9" firstAttribute="trailing" secondItem="YUA-Ib-1cf" secondAttribute="trailing" constant="30" id="wEW-nz-X7o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FoO-Ig-SL9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEd-Nr-dnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="826"/>
         </scene>
     </scenes>
 </document>

@@ -7,8 +7,12 @@
 //
 
 #import "MainMenuController.h"
+#import "Game.h"
 
 @interface MainMenuController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *resultsButton;
 
 @end
 
@@ -16,17 +20,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.startButton addTarget:self action:@selector(startGameSession) forControlEvents:UIControlEventTouchUpInside];
+    [self.resultsButton addTarget:self action:@selector(showResults) forControlEvents:UIControlEventTouchUpInside];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) startGameSession {
+    Game.shared.gameSession = [[GameSession alloc] init];
+    [Game.shared.gameSession startGame:self];
 }
-*/
+
+- (void) showResults {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *resultsController = [storyboard instantiateViewControllerWithIdentifier:@"resultsController"];
+    resultsController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:resultsController animated:NO completion:nil];
+    
+}
 
 @end

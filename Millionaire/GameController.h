@@ -10,9 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol GameDelegate;
+
 @interface GameController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
+
+@end
+
+@protocol GameDelegate
+
+- (void) didEndGameWithResult: (NSUInteger) result;
 
 @end
 

@@ -11,18 +11,13 @@
 
 @implementation GameSettings
 
-+ (BOOL)supportsSecureCoding {
-    return YES;
-}
-
 - (void)encodeWithCoder:(NSCoder *)coder {
     [coder encodeObject:self.gameResults forKey:@"gameResults"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     if (self = [super init]) {
-        NSSet *classes = [NSSet setWithObjects:[NSArray class], [GameResult class], nil];
-        self.gameResults = [coder decodeObjectOfClasses:classes forKey:@"gameResults"];
+        self.gameResults = [coder decodeObjectForKey:@"gameResults"];
     }
     return self;
 }

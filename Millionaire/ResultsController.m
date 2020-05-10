@@ -35,14 +35,13 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Game.shared.gameResults count = %lu", (unsigned long)[Game.shared.gameResults count]);
     return [Game.shared.gameResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"resultCell"];
     GameResult *gameResult = [Game.shared.gameResults objectAtIndex:indexPath.row];
-    NSLog(@"date = %@, result = %@", gameResult.date, gameResult.result);
+    //NSLog(@"date = %@, result = %@", gameResult.date, gameResult.result);
     cell.textLabel.text = [self.dateFormatter stringFromDate:gameResult.date];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",gameResult.result];
     cell.detailTextLabel.textColor = [UIColor whiteColor];

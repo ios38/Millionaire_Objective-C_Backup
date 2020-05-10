@@ -32,17 +32,14 @@ NSString *directory() {
 }
 
 -(void) loadResults {
-    NSLog(@"ResultsCaretaker: loadResults");
+    NSLog(@"ResultsCaretaker: loadResults does not work now!");
+    //GameSettings *gameSettings = [NSKeyedUnarchiver unarchiveObjectWithFile:directory()];
+    //
+    //if(![gameSettings isEqual:[NSNull null]]) {
+    //    Game.shared.gameResults = gameSettings.gameResults;
+    //    NSLog(@"gameResults loaded!");
+    //}
     
-    NSData *data = [NSData dataWithContentsOfFile: directory()];
-    NSError *error;
-    GameSettings *gameSettings = [NSKeyedUnarchiver unarchivedObjectOfClass:[GameSettings class] fromData:data error:&error];
-    if (error) {
-        NSLog(@"%@",error);
-    } else {
-        Game.shared.gameResults = gameSettings.gameResults;
-        NSLog(@"gameResults loaded!");
-    }
 }
 
 @end

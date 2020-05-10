@@ -11,10 +11,6 @@
 @implementation GameResult
 
 
-+ (BOOL)supportsSecureCoding {
-    return YES;
-}
-
 - (instancetype)initWithDate:(NSDate *)date andResult:(NSUInteger)result {
     self = [super init];
     if (self) {
@@ -31,8 +27,8 @@
 
 - (id)initWithCoder:(NSCoder *)coder {
     if ((self = [super init])) {
-        self.date = [coder decodeObjectOfClass:[NSDate class] forKey:@"date"];
-        self.result = [coder decodeObjectOfClass:[NSNumber class] forKey:@"result"];
+        self.date = [coder decodeObjectForKey:@"date"];
+        self.result = [coder decodeObjectForKey:@"result"];
     }
     return self;
 }

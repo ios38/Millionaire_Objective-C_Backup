@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GameSettings : NSObject <NSSecureCoding>
+@interface GameSettings : NSObject <NSCoding>
 
 @property (strong,nonatomic) NSMutableArray *gameResults;
 

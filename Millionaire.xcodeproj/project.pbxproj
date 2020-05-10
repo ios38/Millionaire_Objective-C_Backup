@@ -39,6 +39,8 @@
 		506ECA762466D8540005469A /* GameSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA752466D8540005469A /* GameSession.m */; };
 		506ECA792466DFC20005469A /* ResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA782466DFC20005469A /* ResultsController.m */; };
 		506ECA7C2467B6D80005469A /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA7B2467B6D80005469A /* GameResult.m */; };
+		506ECA7F2467DBD00005469A /* ResultsCaretaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA7E2467DBD00005469A /* ResultsCaretaker.m */; };
+		506ECA822467E9B90005469A /* GameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 506ECA812467E9B90005469A /* GameSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,10 @@
 		506ECA782466DFC20005469A /* ResultsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultsController.m; sourceTree = "<group>"; };
 		506ECA7A2467B6D80005469A /* GameResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameResult.h; sourceTree = "<group>"; };
 		506ECA7B2467B6D80005469A /* GameResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameResult.m; sourceTree = "<group>"; };
+		506ECA7D2467DBD00005469A /* ResultsCaretaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsCaretaker.h; sourceTree = "<group>"; };
+		506ECA7E2467DBD00005469A /* ResultsCaretaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultsCaretaker.m; sourceTree = "<group>"; };
+		506ECA802467E9B90005469A /* GameSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameSettings.h; sourceTree = "<group>"; };
+		506ECA812467E9B90005469A /* GameSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,12 +145,18 @@
 			isa = PBXGroup;
 			children = (
 				506ECA1924656E5D0005469A /* Main.storyboard */,
+				506ECA712466D7290005469A /* Game.h */,
+				506ECA722466D7290005469A /* Game.m */,
+				506ECA742466D8540005469A /* GameSession.h */,
+				506ECA752466D8540005469A /* GameSession.m */,
 				506ECA62246581C60005469A /* MainMenuController.h */,
 				506ECA63246581C60005469A /* MainMenuController.m */,
 				506ECA66246585C80005469A /* GameController.h */,
 				506ECA67246585C80005469A /* GameController.m */,
 				506ECA772466DFC20005469A /* ResultsController.h */,
 				506ECA782466DFC20005469A /* ResultsController.m */,
+				506ECA7D2467DBD00005469A /* ResultsCaretaker.h */,
+				506ECA7E2467DBD00005469A /* ResultsCaretaker.m */,
 				506ECA5F24656F130005469A /* NetworkService.h */,
 				506ECA5C24656F130005469A /* NetworkService.m */,
 				506ECA6B24658E3F0005469A /* AnswerCell.h */,
@@ -225,12 +237,10 @@
 		506ECA65246582210005469A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				506ECA712466D7290005469A /* Game.h */,
-				506ECA722466D7290005469A /* Game.m */,
 				506ECA7A2467B6D80005469A /* GameResult.h */,
 				506ECA7B2467B6D80005469A /* GameResult.m */,
-				506ECA742466D8540005469A /* GameSession.h */,
-				506ECA752466D8540005469A /* GameSession.m */,
+				506ECA802467E9B90005469A /* GameSettings.h */,
+				506ECA812467E9B90005469A /* GameSettings.m */,
 				506ECA5D24656F130005469A /* QuestionAndAnswers.h */,
 				506ECA5E24656F130005469A /* QuestionAndAnswers.m */,
 			);
@@ -318,6 +328,7 @@
 				506ECA5324656EF20005469A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				506ECA4E24656EF20005469A /* UIRefreshControl+AFNetworking.m in Sources */,
 				506ECA2324656E5F0005469A /* main.m in Sources */,
+				506ECA7F2467DBD00005469A /* ResultsCaretaker.m in Sources */,
 				506ECA5B24656EF20005469A /* AFSecurityPolicy.m in Sources */,
 				506ECA64246581C60005469A /* MainMenuController.m in Sources */,
 				506ECA762466D8540005469A /* GameSession.m in Sources */,
@@ -325,6 +336,7 @@
 				506ECA792466DFC20005469A /* ResultsController.m in Sources */,
 				506ECA5824656EF20005469A /* AFURLSessionManager.m in Sources */,
 				506ECA7C2467B6D80005469A /* GameResult.m in Sources */,
+				506ECA822467E9B90005469A /* GameSettings.m in Sources */,
 				506ECA5A24656EF20005469A /* AFNetworkReachabilityManager.m in Sources */,
 				506ECA732466D7290005469A /* Game.m in Sources */,
 				506ECA6D24658E3F0005469A /* AnswerCell.m in Sources */,

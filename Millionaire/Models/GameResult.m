@@ -10,6 +10,7 @@
 
 @implementation GameResult
 
+
 + (BOOL)supportsSecureCoding {
     return YES;
 }
@@ -24,8 +25,8 @@
 }
 
 - (void)encodeWithCoder:(nonnull NSCoder *)coder {
-    [coder encodeObject:self.date forKey:@"name"];
-    [coder encodeObject:self.result forKey:@"age"];
+    [coder encodeObject:self.date forKey:@"date"];
+    [coder encodeObject:self.result forKey:@"date"];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
